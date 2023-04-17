@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:x_and_0/Pages/home_page.dart';
 
+import '../Providers/connection_provider.dart';
 import '../Widgets/custom_buttom.dart';
 import 'online_page.dart';
 
@@ -9,6 +11,7 @@ class ModeSelectedPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final connectionProvider = Provider.of<ConnectionProvider>(context);
     return Scaffold(
       appBar: AppBar(),
       body: Padding(
@@ -33,6 +36,7 @@ class ModeSelectedPage extends StatelessWidget {
             CustomButtom(
                 texto: "Multiplayer online",
                 onPressed: () {
+                  connectionProvider.connectSockt();
                   Navigator.push(
                       context,
                       MaterialPageRoute(

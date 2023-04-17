@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
+import '../Providers/connection_provider.dart';
 import '../Widgets/custom_buttom.dart';
 
 class OnlinePageSelected extends StatefulWidget {
@@ -12,6 +14,7 @@ class OnlinePageSelected extends StatefulWidget {
 class _OnlinePageSelectedState extends State<OnlinePageSelected> {
   @override
   Widget build(BuildContext context) {
+    final connectionProvider = Provider.of<ConnectionProvider>(context);
     return Scaffold(
       appBar: AppBar(),
       body: Padding(
@@ -21,7 +24,9 @@ class _OnlinePageSelectedState extends State<OnlinePageSelected> {
           children: [
             CustomButtom(
               texto: "Crear Sala",
-              onPressed: () {},
+              onPressed: () {
+                connectionProvider.joinroomEvent();
+              },
             ),
             CustomButtom(
               texto: "Unirce a una sala",

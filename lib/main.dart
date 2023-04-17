@@ -2,12 +2,17 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import 'Pages/game_mode_selected.dart';
+import 'Providers/connection_provider.dart';
 import 'Providers/control_provider.dart';
 
 void main() {
   runApp(MultiProvider(providers: [
     ChangeNotifierProvider(
       create: (_) => ControlProvider(),
+      lazy: true,
+    ),
+    ChangeNotifierProvider(
+      create: (_) => ConnectionProvider(),
       lazy: true,
     ),
   ], child: const MyApp()));
