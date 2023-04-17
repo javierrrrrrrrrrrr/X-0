@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import 'Pages/home_page.dart';
+import 'Pages/game_mode_selected.dart';
 import 'Providers/control_provider.dart';
 
 void main() {
@@ -19,9 +19,8 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
-      title: 'Material App',
-      debugShowCheckedModeBanner: false,
-      home: HomePage(),
-    );
+        title: 'Material App',
+        debugShowCheckedModeBanner: false,
+        home: ModeSelectedPage());
   }
 }
