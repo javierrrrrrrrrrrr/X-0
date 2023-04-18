@@ -36,7 +36,7 @@ class ModeSelectedPage extends StatelessWidget {
             CustomButtom(
                 texto: "Multiplayer online",
                 onPressed: () {
-                  connectionProvider.connectSockt();
+                  connectionProvider.connectSocktAndListen();
                   Navigator.push(
                       context,
                       MaterialPageRoute(

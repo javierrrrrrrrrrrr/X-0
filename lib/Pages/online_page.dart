@@ -3,6 +3,7 @@ import 'package:provider/provider.dart';
 
 import '../Providers/connection_provider.dart';
 import '../Widgets/custom_buttom.dart';
+import 'lobby_page.dart';
 
 class OnlinePageSelected extends StatefulWidget {
   const OnlinePageSelected({Key? key}) : super(key: key);
@@ -26,6 +27,13 @@ class _OnlinePageSelectedState extends State<OnlinePageSelected> {
               texto: "Crear Sala",
               onPressed: () {
                 connectionProvider.joinroomEvent();
+
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const Lobby(
+                              key: Key("1"),
+                            )));
               },
             ),
             CustomButtom(
